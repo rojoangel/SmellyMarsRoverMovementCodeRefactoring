@@ -20,16 +20,7 @@ public class Rover {
 
             } else if (command.equals("r")) {
 
-                // Rotate Rover
-                if (isFacingNorth()) {
-                    direction = "E";
-                } else if (isFacingSouth()) {
-                    direction = "W";
-                } else if (isFacingWest()) {
-                    direction = "N";
-                } else {
-                    direction = "S";
-                }
+                rotateRight();
 
             } else {
 
@@ -51,6 +42,18 @@ public class Rover {
                     x += displacement;
                 }
             }
+        }
+    }
+
+    private void rotateRight() {
+        if (isFacingNorth()) {
+            direction = "E";
+        } else if (isFacingSouth()) {
+            direction = "W";
+        } else if (isFacingWest()) {
+            direction = "N";
+        } else {
+            direction = "S";
         }
     }
 
