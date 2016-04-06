@@ -23,7 +23,7 @@ public class Rover {
                     } else {
                         direction = "W";
                     }
-                } else if (direction.equals("S")) {
+                } else if (isFacingSouth()) {
                     if (command.equals("r")) {
                         direction = "W";
                     } else {
@@ -54,7 +54,7 @@ public class Rover {
 
                 if (isFacingNorth()) {
                     y += displacement;
-                } else if (direction.equals("S")) {
+                } else if (isFacingSouth()) {
                     y -= displacement;
                 } else if (direction.equals("W")) {
                     x -= displacement;
@@ -63,6 +63,10 @@ public class Rover {
                 }
             }
         }
+    }
+
+    private boolean isFacingSouth() {
+        return direction.equals("S");
     }
 
     private boolean isFacingNorth() {
