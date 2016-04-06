@@ -32,16 +32,20 @@ public class Rover {
                 }
                 int displacement = displacement1;
 
-                if (isFacingNorth()) {
-                    y += displacement;
-                } else if (isFacingSouth()) {
-                    y -= displacement;
-                } else if (isFacingWest()) {
-                    x -= displacement;
-                } else {
-                    x += displacement;
-                }
+                displace(displacement);
             }
+        }
+    }
+
+    private void displace(int displacement) {
+        if (isFacingNorth()) {
+            y += displacement;
+        } else if (isFacingSouth()) {
+            y -= displacement;
+        } else if (isFacingWest()) {
+            x -= displacement;
+        } else {
+            x += displacement;
         }
     }
 
