@@ -24,17 +24,19 @@ public class Rover {
 
             } else {
 
-                // Displace Rover
-                int displacement1 = -1;
-
-                if (command.equals("f")) {
-                    displacement1 = 1;
-                }
-                int displacement = displacement1;
-
+                int displacement = calculateDisplacement(command);
                 displace(displacement);
             }
         }
+    }
+
+    private int calculateDisplacement(String command) {
+        int displacement1 = -1;
+
+        if (command.equals("f")) {
+            displacement1 = 1;
+        }
+        return displacement1;
     }
 
     private void displace(int displacement) {
