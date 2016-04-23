@@ -105,36 +105,15 @@ public class Rover {
     }
 
     private boolean isFacingWest() {
-        return isWest();
+        return this.direction.isWest();
     }
 
     private boolean isFacingSouth() {
-        return isSouth();
+        return this.direction.isSouth();
     }
 
     private boolean isFacingNorth() {
-        return isNorth();
-    }
-
-    /**
-     * @return boolean
-     */
-    private boolean isNorth() {
-        return directionAsString.equals("N");
-    }
-
-    /**
-     * @return boolean
-     */
-    private boolean isSouth() {
-        return directionAsString.equals("S");
-    }
-
-    /**
-     * @return boolean
-     */
-    private boolean isWest() {
-        return directionAsString.equals("W");
+        return this.direction.isNorth();
     }
 
     @Override
