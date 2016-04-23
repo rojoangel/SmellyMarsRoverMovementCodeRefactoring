@@ -7,13 +7,16 @@ public class Direction {
      * @return Direction
      */
     public static Direction from(String directionAsString) {
+        if (directionAsString.equals("N")) {
+            return new North("N");
+        }
         return new Direction(directionAsString);
     }
 
     /**
      * @param directionAsString String
      */
-    private Direction(String directionAsString) {
+    protected Direction(String directionAsString) {
         this.directionAsString = directionAsString;
     }
 
@@ -43,7 +46,7 @@ public class Direction {
      */
     public Direction rotateRight() {
         if (isNorth()) {
-            return Direction.from("E");
+            throw new RuntimeException("Unexpected method invocation");
         } else if (isSouth()) {
             return Direction.from("W");
         } else if (isWest()) {
