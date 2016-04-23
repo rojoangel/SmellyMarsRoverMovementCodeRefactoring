@@ -30,4 +30,14 @@ public class Direction {
         return directionAsString.equals("W");
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Direction direction = (Direction) o;
+
+        return directionAsString != null ? directionAsString.equals(direction.directionAsString) : direction.directionAsString == null;
+
+    }
 }

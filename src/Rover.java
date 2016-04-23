@@ -2,7 +2,6 @@ public class Rover {
 
     private int y;
     private int x;
-    private String directionAsString;
     private Direction direction;
 
     public Rover(int x, int y, String directionAsString) {
@@ -15,7 +14,6 @@ public class Rover {
      * @param directionAsString String
      */
     private void setDirection(String directionAsString) {
-        this.directionAsString = directionAsString;
         this.direction = new Direction(directionAsString);
     }
 
@@ -117,30 +115,15 @@ public class Rover {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        if (obj == null)
-            return false;
+        Rover rover = (Rover) o;
 
-        if (getClass() != obj.getClass())
-            return false;
+        if (y != rover.y) return false;
+        if (x != rover.x) return false;
+        return direction != null ? direction.equals(rover.direction) : rover.direction == null;
 
-        Rover other = (Rover) obj;
-
-        if (directionAsString == null) {
-            if (other.directionAsString != null)
-                return false;
-        } else if (!directionAsString.equals(other.directionAsString))
-            return false;
-
-        if (x != other.x)
-            return false;
-
-        if (y != other.y)
-            return false;
-
-        return true;
     }
 }
