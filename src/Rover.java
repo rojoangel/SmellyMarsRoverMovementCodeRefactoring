@@ -24,8 +24,24 @@ public class Rover {
 
             } else {
 
-                displace(calculateDisplacement(command));
+                displace(command);
             }
+        }
+    }
+
+    /**
+     * @param command String
+     */
+    private void displace(String command) {
+        int displacement = calculateDisplacement(command);
+        if (isFacingNorth()) {
+            y += displacement;
+        } else if (isFacingSouth()) {
+            y -= displacement;
+        } else if (isFacingWest()) {
+            x -= displacement;
+        } else {
+            x += displacement;
         }
     }
 
@@ -36,18 +52,6 @@ public class Rover {
             displacement1 = 1;
         }
         return displacement1;
-    }
-
-    private void displace(int displacement) {
-        if (isFacingNorth()) {
-            y += displacement;
-        } else if (isFacingSouth()) {
-            y -= displacement;
-        } else if (isFacingWest()) {
-            x -= displacement;
-        } else {
-            x += displacement;
-        }
     }
 
     private void rotateRight() {
