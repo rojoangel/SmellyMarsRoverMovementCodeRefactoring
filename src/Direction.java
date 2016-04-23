@@ -8,18 +8,18 @@ public class Direction {
      */
     public static Direction from(String directionAsString) {
         if (isNorth(directionAsString)) {
-            return new North("N");
+            return new North(directionAsString);
         }
 
         if (isSouth(directionAsString)) {
-            return new South("S");
+            return new South(directionAsString);
         }
 
         if (isWest(directionAsString)) {
-            return new West("W");
+            return new West(directionAsString);
         }
 
-        return new East("E");
+        return new East(directionAsString);
     }
 
     private static boolean isWest(String directionAsString) {
