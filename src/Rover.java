@@ -21,7 +21,7 @@ public class Rover {
      * @param command String
      */
     private void applyCommand(String command) {
-        if (command.equals("l")) {
+        if (shouldRotateLeft(command)) {
 
             rotateLeft();
 
@@ -33,6 +33,14 @@ public class Rover {
 
             displace(command);
         }
+    }
+
+    /**
+     * @param command String
+     * @return boolean
+     */
+    private boolean shouldRotateLeft(String command) {
+        return command.equals("l");
     }
 
     /**
