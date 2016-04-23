@@ -22,17 +22,20 @@ public class Rover {
      */
     private void applyCommand(String command) {
         if (shouldRotateLeft(command)) {
-
             rotateLeft();
-
-        } else if (command.equals("r")) {
-
+        } else if (shouldRotateRight(command)) {
             rotateRight();
-
         } else {
-
             displace(command);
         }
+    }
+
+    /**
+     * @param command String
+     * @return boolean
+     */
+    private boolean shouldRotateRight(String command) {
+        return command.equals("r");
     }
 
     /**
