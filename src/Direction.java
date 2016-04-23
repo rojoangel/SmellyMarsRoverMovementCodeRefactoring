@@ -19,7 +19,7 @@ public class Direction {
             return new West("W");
         }
 
-        return new Direction(directionAsString);
+        return new East("E");
     }
 
     private static boolean isWest(String directionAsString) {
@@ -74,15 +74,7 @@ public class Direction {
      * @return Direction
      */
     public Direction rotateRight() {
-        if (isNorth()) {
-            throw new RuntimeException("Unexpected method invocation");
-        } else if (isSouth()) {
-            throw new RuntimeException("Unexpected method invocation");
-        } else if (isWest()) {
-            throw new RuntimeException("Unexpected method invocation");
-        } else {
-             return Direction.from("S");
-        }
+        throw new RuntimeException("Unexpected method invocation");
     }
 
     @Override
