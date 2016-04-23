@@ -24,8 +24,7 @@ public class Rover {
 
             } else {
 
-                int displacement = calculateDisplacement(command);
-                displace(displacement);
+                displace(calculateDisplacement(command));
             }
         }
     }
