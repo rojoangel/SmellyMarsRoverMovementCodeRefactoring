@@ -14,7 +14,16 @@ public class Direction {
         if (isSouth(directionAsString)) {
             return new South("S");
         }
+
+        if (isWest(directionAsString)) {
+            return new West("W");
+        }
+
         return new Direction(directionAsString);
+    }
+
+    private static boolean isWest(String directionAsString) {
+        return directionAsString.equals("W");
     }
 
     /**
@@ -58,7 +67,7 @@ public class Direction {
      * @return boolean
      */
     public boolean isWest() {
-        return directionAsString.equals("W");
+        return isWest(directionAsString);
     }
 
     /**
@@ -70,7 +79,7 @@ public class Direction {
         } else if (isSouth()) {
             throw new RuntimeException("Unexpected method invocation");
         } else if (isWest()) {
-            return Direction.from("N");
+            throw new RuntimeException("Unexpected method invocation");
         } else {
              return Direction.from("S");
         }
