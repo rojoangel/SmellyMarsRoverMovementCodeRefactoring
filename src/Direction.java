@@ -7,10 +7,18 @@ public class Direction {
      * @return Direction
      */
     public static Direction from(String directionAsString) {
-        if (directionAsString.equals("N")) {
+        if (isNorth(directionAsString)) {
             return new North("N");
         }
         return new Direction(directionAsString);
+    }
+
+    /**
+     * @param directionAsString String
+     * @return boolean
+     */
+    private static boolean isNorth(String directionAsString) {
+        return directionAsString.equals("N");
     }
 
     /**
@@ -24,7 +32,7 @@ public class Direction {
      * @return boolean
      */
     public boolean isNorth() {
-        return directionAsString.equals("N");
+        return isNorth(directionAsString);
     }
 
     /**
