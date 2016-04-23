@@ -1,11 +1,11 @@
 public class Rover {
 
-    private String direction;
+    private String directionAsString;
     private int y;
     private int x;
 
-    public Rover(int x, int y, String direction) {
-        this.direction = direction;
+    public Rover(int x, int y, String directionAsString) {
+        this.directionAsString = directionAsString;
         this.y = y;
         this.x = x;
     }
@@ -73,38 +73,38 @@ public class Rover {
 
     private void rotateRight() {
         if (isFacingNorth()) {
-            direction = "E";
+            directionAsString = "E";
         } else if (isFacingSouth()) {
-            direction = "W";
+            directionAsString = "W";
         } else if (isFacingWest()) {
-            direction = "N";
+            directionAsString = "N";
         } else {
-            direction = "S";
+            directionAsString = "S";
         }
     }
 
     private void rotateLeft() {
         if (isFacingNorth()) {
-            direction = "W";
+            directionAsString = "W";
         } else if (isFacingSouth()) {
-            direction = "E";
+            directionAsString = "E";
         } else if (isFacingWest()) {
-            direction = "S";
+            directionAsString = "S";
         } else {
-            direction = "N";
+            directionAsString = "N";
         }
     }
 
     private boolean isFacingWest() {
-        return direction.equals("W");
+        return directionAsString.equals("W");
     }
 
     private boolean isFacingSouth() {
-        return direction.equals("S");
+        return directionAsString.equals("S");
     }
 
     private boolean isFacingNorth() {
-        return direction.equals("N");
+        return directionAsString.equals("N");
     }
 
     @Override
@@ -120,10 +120,10 @@ public class Rover {
 
         Rover other = (Rover) obj;
 
-        if (direction == null) {
-            if (other.direction != null)
+        if (directionAsString == null) {
+            if (other.directionAsString != null)
                 return false;
-        } else if (!direction.equals(other.direction))
+        } else if (!directionAsString.equals(other.directionAsString))
             return false;
 
         if (x != other.x)
