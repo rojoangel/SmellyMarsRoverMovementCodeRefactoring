@@ -5,7 +5,7 @@ public class Rover {
     private Direction direction;
 
     public Rover(int x, int y, String directionAsString) {
-        this.direction = new Direction(directionAsString);
+        this.direction = Direction.from(directionAsString);
         this.y = y;
         this.x = x;
     }
@@ -73,13 +73,13 @@ public class Rover {
 
     private void rotateLeft() {
         if (isFacingNorth()) {
-            this.direction = new Direction("W");
+            this.direction = Direction.from("W");
         } else if (isFacingSouth()) {
-            this.direction = new Direction("E");
+            this.direction = Direction.from("E");
         } else if (isFacingWest()) {
-            this.direction = new Direction("S");
+            this.direction = Direction.from("S");
         } else {
-            this.direction = new Direction("N");
+            this.direction = Direction.from("N");
         }
     }
 

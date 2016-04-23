@@ -4,8 +4,16 @@ public class Direction {
 
     /**
      * @param directionAsString String
+     * @return Direction
      */
-    public Direction(String directionAsString) {
+    public static Direction from(String directionAsString) {
+        return new Direction(directionAsString);
+    }
+
+    /**
+     * @param directionAsString String
+     */
+    private Direction(String directionAsString) {
         this.directionAsString = directionAsString;
     }
 
@@ -35,13 +43,13 @@ public class Direction {
      */
     public Direction rotateRight() {
         if (isNorth()) {
-            return new Direction("E");
+            return Direction.from("E");
         } else if (isSouth()) {
-            return new Direction("W");
+            return Direction.from("W");
         } else if (isWest()) {
-            return new Direction("N");
+            return Direction.from("N");
         } else {
-             return new Direction("S");
+             return Direction.from("S");
         }
     }
 
