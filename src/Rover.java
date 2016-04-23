@@ -24,7 +24,7 @@ public class Rover {
         if (shouldRotateLeft(command)) {
             rotateLeft();
         } else if (shouldRotateRight(command)) {
-            rotateRight();
+            this.direction = this.direction.rotateRight();
         } else {
             displace(command);
         }
@@ -69,18 +69,6 @@ public class Rover {
             displacement1 = 1;
         }
         return displacement1;
-    }
-
-    private void rotateRight() {
-        if (this.direction.isNorth()) {
-            this.direction = new Direction("E");
-        } else if (this.direction.isSouth()) {
-            this.direction = new Direction("W");
-        } else if (this.direction.isWest()) {
-            this.direction = new Direction("N");
-        } else {
-            this.direction = new Direction("S");
-        }
     }
 
     private void rotateLeft() {

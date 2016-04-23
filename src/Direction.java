@@ -30,6 +30,21 @@ public class Direction {
         return directionAsString.equals("W");
     }
 
+    /**
+     * @return Direction
+     */
+    public Direction rotateRight() {
+        if (isNorth()) {
+            return new Direction("E");
+        } else if (isSouth()) {
+            return new Direction("W");
+        } else if (isWest()) {
+            return new Direction("N");
+        } else {
+             return new Direction("S");
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
