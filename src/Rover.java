@@ -72,11 +72,11 @@ public class Rover {
     }
 
     private void rotateRight() {
-        if (isFacingNorth()) {
+        if (this.direction.isNorth()) {
             this.direction = new Direction("E");
-        } else if (isFacingSouth()) {
+        } else if (this.direction.isSouth()) {
             this.direction = new Direction("W");
-        } else if (isFacingWest()) {
+        } else if (this.direction.isWest()) {
             this.direction = new Direction("N");
         } else {
             this.direction = new Direction("S");
