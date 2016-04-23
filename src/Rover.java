@@ -5,16 +5,9 @@ public class Rover {
     private Direction direction;
 
     public Rover(int x, int y, String directionAsString) {
-        setDirection(directionAsString);
+        this.direction = new Direction(directionAsString);
         this.y = y;
         this.x = x;
-    }
-
-    /**
-     * @param directionAsString String
-     */
-    private void setDirection(String directionAsString) {
-        this.direction = new Direction(directionAsString);
     }
 
     public void receive(String commandsSequence) {
@@ -80,25 +73,25 @@ public class Rover {
 
     private void rotateRight() {
         if (isFacingNorth()) {
-            setDirection("E");
+            this.direction = new Direction("E");
         } else if (isFacingSouth()) {
-            setDirection("W");
+            this.direction = new Direction("W");
         } else if (isFacingWest()) {
-            setDirection("N");
+            this.direction = new Direction("N");
         } else {
-            setDirection("S");
+            this.direction = new Direction("S");
         }
     }
 
     private void rotateLeft() {
         if (isFacingNorth()) {
-            setDirection("W");
+            this.direction = new Direction("W");
         } else if (isFacingSouth()) {
-            setDirection("E");
+            this.direction = new Direction("E");
         } else if (isFacingWest()) {
-            setDirection("S");
+            this.direction = new Direction("S");
         } else {
-            setDirection("N");
+            this.direction = new Direction("N");
         }
     }
 
