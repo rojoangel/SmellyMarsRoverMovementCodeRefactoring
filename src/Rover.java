@@ -3,11 +3,19 @@ public class Rover {
     private Direction direction;
     private Coordinates coordinates;
 
+    /**
+     * @param x int
+     * @param y int
+     * @param directionAsString String
+     */
     public Rover(int x, int y, String directionAsString) {
         this.coordinates = new Coordinates(x, y);
         this.direction = Direction.from(directionAsString);
     }
 
+    /**
+     * @param commandsSequence String
+     */
     public void receive(String commandsSequence) {
         for (int i = 0; i < commandsSequence.length(); ++i) {
             String command = commandsSequence.substring(i, i + 1);
@@ -52,6 +60,10 @@ public class Rover {
         addCoordinates(coordinatesToAdd);
     }
 
+    /**
+     * @param command String
+     * @return Coordinates
+     */
     private Coordinates displace(String command) {
         if (command.equals("f")) {
             return direction.moveForward();
@@ -60,6 +72,9 @@ public class Rover {
         }
     }
 
+    /**
+     * @param coordinatesToAdd Coordinates
+     */
     private void addCoordinates(Coordinates coordinatesToAdd) {
         this.coordinates.add(coordinatesToAdd);
     }
