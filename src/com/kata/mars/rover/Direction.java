@@ -19,41 +19,18 @@ public abstract class Direction {
      * @return Direction
      */
     public static Direction from(String directionAsString) {
-        if (isNorth(directionAsString)) {
-            return new North();
+        switch (directionAsString) {
+            case NORTH:
+                return new North();
+            case SOUTH:
+                return new South();
+            case WEST:
+                return new West();
+            default:
+                return new East();
         }
-
-        if (isSouth(directionAsString)) {
-            return new South();
-        }
-
-        if (isWest(directionAsString)) {
-            return new West();
-        }
-
-        return new East();
     }
-
-    private static boolean isWest(String directionAsString) {
-        return directionAsString.equals(WEST);
-    }
-
-    /**
-     * @param directionAsString String
-     * @return boolean
-     */
-    private static boolean isSouth(String directionAsString) {
-        return directionAsString.equals(SOUTH);
-    }
-
-    /**
-     * @param directionAsString String
-     * @return boolean
-     */
-    private static boolean isNorth(String directionAsString) {
-        return directionAsString.equals(NORTH);
-    }
-
+    
     /**
      * @return Direction
      */
