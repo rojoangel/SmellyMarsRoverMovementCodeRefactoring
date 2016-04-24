@@ -20,28 +20,28 @@ public class Commands {
     }
 
     /**
-     * @param commandsSequence String
+     * @param sequence String
      * @return Commands
      */
-    public static Commands extractCommandsFrom(String commandsSequence) {
+    public static Commands extractCommandsFrom(String sequence) {
         List<Command> commands = new ArrayList<>();
-        for (int i = 0; i < commandsSequence.length(); ++i) {
-            String commandRepresentation = commandsSequence.substring(i, i + 1);
-            commands.add(createCommand(commandRepresentation));
+        for (int i = 0; i < sequence.length(); ++i) {
+            String representation = sequence.substring(i, i + 1);
+            commands.add(createCommand(representation));
         }
         return new Commands(commands);
     }
 
     /**
-     * @param commandRepresentation String
+     * @param representation String
      * @return Command
      */
-    private static Command createCommand(String commandRepresentation) {
-        if (commandRepresentation.equals("l")) {
+    private static Command createCommand(String representation) {
+        if (representation.equals("l")) {
             return new RotateLeft();
-        } else if (commandRepresentation.equals("r")) {
+        } else if (representation.equals("r")) {
             return new RotateRight();
-        } else  if (commandRepresentation.equals("f")) {
+        } else  if (representation.equals("f")) {
             return new MoveForward();
         } else {
             return new MoveBackward();
