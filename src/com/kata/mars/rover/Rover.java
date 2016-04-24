@@ -36,7 +36,7 @@ public class Rover {
         } else if (shouldRotateRight(command)) {
             setVector(this.vector.rotateRight());
         } else {
-            applyDisplacement(command);
+            setVector(displace(command));
         }
     }
 
@@ -63,13 +63,6 @@ public class Rover {
      */
     private boolean shouldRotateLeft(String command) {
         return command.equals("l");
-    }
-
-    /**
-     * @param command String
-     */
-    private void applyDisplacement(String command) {
-        setVector(displace(command));
     }
 
     /**
