@@ -14,4 +14,9 @@ public class North extends Direction {
     public Direction rotateRight() {
         return Direction.from("E");
     }
+
+    @Override
+    public Direction rotateLeft() {
+        return Direction.from("W");
+    }
 }

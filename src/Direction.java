@@ -80,7 +80,7 @@ public abstract class Direction {
      */
     public Direction rotateLeft() {
         if (isNorth()) {
-            return Direction.from("W");
+            throw new RuntimeException("Unexpected call to Direction's rotateLeft method");
         } else if (isSouth()) {
             return Direction.from("E");
         } else if (isWest()) {
