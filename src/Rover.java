@@ -78,18 +78,6 @@ public class Rover {
         this.coordinates.add(coordinatesToAdd);
     }
     
-    private boolean isFacingWest() {
-        return this.direction.isWest();
-    }
-
-    private boolean isFacingSouth() {
-        return this.direction.isSouth();
-    }
-
-    private boolean isFacingNorth() {
-        return this.direction.isNorth();
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
