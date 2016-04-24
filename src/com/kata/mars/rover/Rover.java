@@ -3,8 +3,6 @@ package com.kata.mars.rover;
 public class Rover {
 
     private Vector vector;
-    private Direction direction;
-    private Coordinates coordinates;
 
     /**
      * @param x int
@@ -12,8 +10,6 @@ public class Rover {
      * @param directionAsString String
      */
     public Rover(int x, int y, String directionAsString) {
-        this.coordinates = new Coordinates(x, y);
-        this.direction = Direction.from(directionAsString);
         this.vector = new Vector(new Coordinates(x, y), Direction.from(directionAsString));
     }
 
@@ -45,8 +41,6 @@ public class Rover {
      */
     private void setVector(Vector vector) {
         this.vector = vector;
-        this.coordinates = vector.coordinates;
-        this.direction = vector.direction;
     }
 
     /**
