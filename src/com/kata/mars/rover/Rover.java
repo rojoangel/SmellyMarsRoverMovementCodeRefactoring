@@ -5,6 +5,9 @@ import com.kata.mars.rover.command.MoveForward;
 import com.kata.mars.rover.command.RotateLeft;
 import com.kata.mars.rover.command.RotateRight;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Rover {
 
     private Vector vector;
@@ -22,17 +25,21 @@ public class Rover {
      * @param commandsSequence String
      */
     public void receive(String commandsSequence) {
+        List<Command> commands = new ArrayList<>();
         for (int i = 0; i < commandsSequence.length(); ++i) {
             String command = commandsSequence.substring(i, i + 1);
             if (command.equals("l")) {
-                this.vector = new RotateLeft().apply(this.vector);
+                commands.add(new RotateLeft());
             } else if (command.equals("r")) {
-                this.vector = new RotateRight().apply(this.vector);
+                commands.add(new RotateRight());
             } else  if (command.equals("f")) {
-                this.vector = new MoveForward().apply(this.vector);
+                commands.add(new MoveForward());
             } else {
-                this.vector = new MoveBackward().apply(this.vector);
+                commands.add(new MoveBackward());
             }
+        }
+        for (Command command : commands) {
+            this.vector = command.apply(this.vector);
         }
     }
 
