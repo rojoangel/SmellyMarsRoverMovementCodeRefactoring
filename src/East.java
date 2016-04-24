@@ -24,4 +24,9 @@ public class East extends Direction {
     public Coordinates moveBackward() {
         return new Coordinates(-1, 0);
     }
+
+    @Override
+    public Coordinates moveForward() {
+        return new Coordinates(1, 0);
+    }
 }
