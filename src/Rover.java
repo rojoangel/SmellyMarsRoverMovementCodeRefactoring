@@ -3,11 +3,13 @@ public class Rover {
     private int y;
     private int x;
     private Direction direction;
+    private final Coordinates coordinates;
 
     public Rover(int x, int y, String directionAsString) {
-        this.direction = Direction.from(directionAsString);
         this.y = y;
         this.x = x;
+        this.coordinates = new Coordinates(x, y);
+        this.direction = Direction.from(directionAsString);
     }
 
     public void receive(String commandsSequence) {
