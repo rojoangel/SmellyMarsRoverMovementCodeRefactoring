@@ -1,6 +1,7 @@
 package com.kata.mars.rover;
 
 import com.kata.mars.rover.command.RotateLeft;
+import com.kata.mars.rover.command.RotateRight;
 
 public class Rover {
 
@@ -32,7 +33,7 @@ public class Rover {
         if (shouldRotateLeft(command)) {
             this.vector = new RotateLeft().apply(this.vector);
         } else if (shouldRotateRight(command)) {
-            this.vector = this.vector.rotateRight();
+            this.vector = new RotateRight().apply(this.vector);
         } else {
             this.vector = displace(command);
         }
