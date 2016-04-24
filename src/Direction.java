@@ -19,7 +19,7 @@ public abstract class Direction {
             return new West();
         }
 
-        return new East(directionAsString);
+        return new East();
     }
 
     private static boolean isWest(String directionAsString) {
