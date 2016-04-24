@@ -67,26 +67,22 @@ public class Rover {
     }
 
     private Coordinates displace(String command) {
-        if (isFacingNorth()) {
-            if (command.equals("f")) {
+        if (command.equals("f")) {
+            if (isFacingNorth()) {
                 return new Coordinates(0, 1);
-            } else {
+            } else if (isFacingSouth()) {
                 return new Coordinates(0, -1);
-            }
-        } else if (isFacingSouth()) {
-            if (command.equals("f")) {
-                return new Coordinates(0, -1);
-            } else {
-                return new Coordinates(0, 1);
-            }
-        } else if (isFacingWest()) {
-            if (command.equals("f")) {
+            } else if (isFacingWest()) {
                 return new Coordinates(-1, 0);
             } else {
                 return new Coordinates(1, 0);
             }
         } else {
-            if (command.equals("f")) {
+            if (isFacingNorth()) {
+                return new Coordinates(0, -1);
+            } else if (isFacingSouth()) {
+                return new Coordinates(0, 1);
+            } else if (isFacingWest()) {
                 return new Coordinates(1, 0);
             } else {
                 return new Coordinates(-1, 0);
