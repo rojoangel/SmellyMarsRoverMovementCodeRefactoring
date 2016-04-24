@@ -89,7 +89,7 @@ public abstract class Direction {
         } else if (isSouth()) {
             throw new RuntimeException("Unexpected call to Direction moveBackward method");
         } else if (isWest()) {
-            return new Coordinates(1, 0);
+            throw new RuntimeException("Unexpected call to Direction moveBackward method");
         } else {
             return new Coordinates(-1, 0);
         }
