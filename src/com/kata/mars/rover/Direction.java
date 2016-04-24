@@ -10,6 +10,7 @@ public abstract class Direction {
     private static final String NORTH = "N";
     private static final String SOUTH = "S";
     private static final String WEST = "W";
+    private static final String EAST = "E";
 
     protected Direction() {
     }
@@ -26,11 +27,13 @@ public abstract class Direction {
                 return new South();
             case WEST:
                 return new West();
-            default:
+            case EAST:
                 return new East();
+            default:
+                throw new RuntimeException("Invalid direction");
         }
     }
-    
+
     /**
      * @return Direction
      */
