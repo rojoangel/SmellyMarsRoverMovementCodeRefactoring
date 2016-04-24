@@ -78,10 +78,24 @@ public class Rover {
      */
     private Coordinates displace(String command) {
         if (command.equals("f")) {
-            return direction.moveForward(this.coordinates);
+            return moveForward();
         } else {
-            return direction.moveBackward(this.coordinates);
+            return moveBackward();
         }
+    }
+
+    /**
+     * @return Coordinates
+     */
+    private Coordinates moveBackward() {
+        return direction.moveBackward(this.coordinates);
+    }
+
+    /**
+     * @return Coordinates
+     */
+    private Coordinates moveForward() {
+        return this.direction.moveForward(this.coordinates);
     }
 
     @Override
