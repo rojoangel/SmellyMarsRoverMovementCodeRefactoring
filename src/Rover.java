@@ -65,19 +65,31 @@ public class Rover {
      */
     private void displace(String command) {
         if (isFacingNorth()) {
-            int displacement = calculateDisplacement(command);
+            int displacement =  BACKWARD_DISPLACEMENT;
+            if (command.equals("f")) {
+                displacement =  FORWARD_DISPLACEMENT;
+            }
             Coordinates coordinatesToAdd = new Coordinates(0, displacement);
             addCoordinates(coordinatesToAdd);
         } else if (isFacingSouth()) {
-            int displacement = calculateDisplacement(command);
+            int displacement =  BACKWARD_DISPLACEMENT;
+            if (command.equals("f")) {
+                displacement =  FORWARD_DISPLACEMENT;
+            }
             Coordinates coordinatesToAdd = new Coordinates(0, -displacement);
             addCoordinates(coordinatesToAdd);
         } else if (isFacingWest()) {
-            int displacement = calculateDisplacement(command);
+            int displacement =  BACKWARD_DISPLACEMENT;
+            if (command.equals("f")) {
+                displacement =  FORWARD_DISPLACEMENT;
+            }
             Coordinates coordinatesToAdd = new Coordinates(-displacement, 0);
             addCoordinates(coordinatesToAdd);
         } else {
-            int displacement = calculateDisplacement(command);
+            int displacement =  BACKWARD_DISPLACEMENT;
+            if (command.equals("f")) {
+                displacement =  FORWARD_DISPLACEMENT;
+            }
             Coordinates coordinatesToAdd = new Coordinates(displacement, 0);
             addCoordinates(coordinatesToAdd);
         }
@@ -85,13 +97,6 @@ public class Rover {
 
     private void addCoordinates(Coordinates coordinatesToAdd) {
         this.coordinates.add(coordinatesToAdd);
-    }
-
-    private int calculateDisplacement(String command) {
-        if (command.equals("f")) {
-            return FORWARD_DISPLACEMENT;
-        }
-        return BACKWARD_DISPLACEMENT;
     }
     
     private boolean isFacingWest() {
