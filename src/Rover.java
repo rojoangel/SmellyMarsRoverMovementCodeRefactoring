@@ -40,7 +40,7 @@ public class Rover {
         } else if (shouldRotateRight(command)) {
             this.direction = this.direction.rotateRight();
         } else {
-            displace(command);
+            applyDisplacement(command);
         }
     }
 
@@ -63,36 +63,34 @@ public class Rover {
     /**
      * @param command String
      */
-    private void displace(String command) {
+    private void applyDisplacement(String command) {
+        Coordinates coordinatesToAdd;
         if (isFacingNorth()) {
             int displacement =  BACKWARD_DISPLACEMENT;
             if (command.equals("f")) {
                 displacement =  FORWARD_DISPLACEMENT;
             }
-            Coordinates coordinatesToAdd = new Coordinates(0, displacement);
-            addCoordinates(coordinatesToAdd);
+            coordinatesToAdd = new Coordinates(0, displacement);
         } else if (isFacingSouth()) {
             int displacement =  BACKWARD_DISPLACEMENT;
             if (command.equals("f")) {
                 displacement =  FORWARD_DISPLACEMENT;
             }
-            Coordinates coordinatesToAdd = new Coordinates(0, -displacement);
-            addCoordinates(coordinatesToAdd);
+            coordinatesToAdd = new Coordinates(0, -displacement);
         } else if (isFacingWest()) {
             int displacement =  BACKWARD_DISPLACEMENT;
             if (command.equals("f")) {
                 displacement =  FORWARD_DISPLACEMENT;
             }
-            Coordinates coordinatesToAdd = new Coordinates(-displacement, 0);
-            addCoordinates(coordinatesToAdd);
+            coordinatesToAdd = new Coordinates(-displacement, 0);
         } else {
             int displacement =  BACKWARD_DISPLACEMENT;
             if (command.equals("f")) {
                 displacement =  FORWARD_DISPLACEMENT;
             }
-            Coordinates coordinatesToAdd = new Coordinates(displacement, 0);
-            addCoordinates(coordinatesToAdd);
+            coordinatesToAdd = new Coordinates(displacement, 0);
         }
+        addCoordinates(coordinatesToAdd);
     }
 
     private void addCoordinates(Coordinates coordinatesToAdd) {
