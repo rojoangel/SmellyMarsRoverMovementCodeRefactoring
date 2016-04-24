@@ -69,14 +69,14 @@ public class Rover {
      * @param command String
      */
     private void applyDisplacement(String command) {
-        setVector(new Vector(displace(command), direction));
+        setVector(displace(command));
     }
 
     /**
      * @param command String
-     * @return Coordinates
+     * @return Vector
      */
-    private Coordinates displace(String command) {
+    private Vector displace(String command) {
         if (command.equals("f")) {
             return moveForward();
         } else {
@@ -85,17 +85,17 @@ public class Rover {
     }
 
     /**
-     * @return Coordinates
+     * @return Vector
      */
-    private Coordinates moveBackward() {
-        return direction.moveBackward(this.coordinates);
+    private Vector moveBackward() {
+        return new Vector(direction.moveBackward(this.coordinates), this.direction);
     }
 
     /**
-     * @return Coordinates
+     * @return Vector
      */
-    private Coordinates moveForward() {
-        return this.direction.moveForward(this.coordinates);
+    private Vector moveForward() {
+        return new Vector(this.direction.moveForward(this.coordinates), this.direction);
     }
 
     @Override
