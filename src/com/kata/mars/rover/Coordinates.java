@@ -16,10 +16,13 @@ public class Coordinates {
 
     /**
      * @param displacement Coordinates
+     * @return Coordinates
      */
-    public void add(Coordinates displacement) {
-        this.x += displacement.x;
-        this.y += displacement.y;
+    public Coordinates add(Coordinates displacement) {
+        return new Coordinates(
+            this.x + displacement.x,
+            this.y + displacement.y
+        );
     }
 
     @Override

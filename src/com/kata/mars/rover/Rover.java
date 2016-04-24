@@ -88,7 +88,7 @@ public class Rover {
      * @param coordinatesToAdd Coordinates
      */
     private void addCoordinates(Coordinates coordinatesToAdd) {
-        this.coordinates.add(coordinatesToAdd);
+        this.coordinates = this.coordinates.add(coordinatesToAdd);
     }
     
     @Override
