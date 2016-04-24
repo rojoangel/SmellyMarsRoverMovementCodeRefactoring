@@ -19,4 +19,9 @@ public class North extends Direction {
     public Direction rotateLeft() {
         return Direction.from("W");
     }
+
+    @Override
+    public Coordinates moveBackward() {
+        return new Coordinates(0, -1);
+    }
 }
