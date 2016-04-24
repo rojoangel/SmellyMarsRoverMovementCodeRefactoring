@@ -13,6 +13,20 @@ public class Vector {
         this.direction = direction;
     }
 
+    /**
+     * @return Vector
+     */
+    public Vector rotateRight() {
+        return new Vector(this.coordinates, this.direction.rotateRight());
+    }
+
+    /**
+     * @return Vector
+     */
+    public Vector rotateLeft() {
+        return new Vector(this.coordinates, this.direction.rotateLeft());
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
