@@ -16,7 +16,7 @@ public abstract class Direction {
         }
 
         if (isWest(directionAsString)) {
-            return new West(directionAsString);
+            return new West();
         }
 
         return new East(directionAsString);

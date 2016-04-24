@@ -7,6 +7,10 @@ public class West extends Direction {
         super(directionAsString);
     }
 
+    protected West() {
+        super("W");
+    }
+
     /**
      * @return Direction
      */

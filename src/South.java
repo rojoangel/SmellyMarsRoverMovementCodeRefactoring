@@ -1,5 +1,5 @@
 public class South extends Direction {
-    
+
     protected South() {
         super("S");
     }
