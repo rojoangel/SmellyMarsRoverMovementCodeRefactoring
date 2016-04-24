@@ -10,6 +10,10 @@ import java.util.List;
 
 public class Commands {
 
+    private static final String LEFT = "l";
+    private static final String RIGHT = "r";
+    private static final String FORWARD = "f";
+
     private List<Command> commands;
 
     /**
@@ -37,14 +41,15 @@ public class Commands {
      * @return Command
      */
     private static Command createCommand(String representation) {
-        if (representation.equals("l")) {
-            return new RotateLeft();
-        } else if (representation.equals("r")) {
-            return new RotateRight();
-        } else  if (representation.equals("f")) {
-            return new MoveForward();
-        } else {
-            return new MoveBackward();
+        switch (representation) {
+            case LEFT:
+                return new RotateLeft();
+            case RIGHT:
+                return new RotateRight();
+            case FORWARD:
+                return new MoveForward();
+            default:
+                return new MoveBackward();
         }
     }
 
