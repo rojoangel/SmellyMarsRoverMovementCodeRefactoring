@@ -12,7 +12,7 @@ public class Commands {
     /**
      * @param commands List<Command>
      */
-    public Commands(List<Command> commands) {
+    private Commands(List<Command> commands) {
         this.commands = commands;
     }
 
