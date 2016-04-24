@@ -1,5 +1,6 @@
 package com.kata.mars.rover;
 
+import com.kata.mars.rover.command.MoveBackward;
 import com.kata.mars.rover.command.MoveForward;
 import com.kata.mars.rover.command.RotateLeft;
 import com.kata.mars.rover.command.RotateRight;
@@ -64,7 +65,7 @@ public class Rover {
         if (command.equals("f")) {
             return new MoveForward().apply(this.vector);
         } else {
-            return this.vector.moveBackward();
+            return new MoveBackward().apply(this.vector);
         }
     }
 
