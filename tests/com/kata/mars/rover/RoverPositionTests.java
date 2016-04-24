@@ -1,5 +1,8 @@
+package com.kata.mars.rover;
+
 import static org.junit.Assert.*;
 
+import com.kata.mars.rover.Rover;
 import org.junit.Test;
 
 public class RoverPositionTests {

@@ -1,3 +1,5 @@
+package com.kata.mars.rover;
+
 public class Rover {
 
     private Direction direction;

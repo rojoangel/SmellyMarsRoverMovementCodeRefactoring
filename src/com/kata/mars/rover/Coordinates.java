@@ -1,3 +1,5 @@
+package com.kata.mars.rover;
+
 public class Coordinates {
     private int x;
     private int y;

@@ -1,3 +1,10 @@
+package com.kata.mars.rover;
+
+import com.kata.mars.rover.direction.East;
+import com.kata.mars.rover.direction.North;
+import com.kata.mars.rover.direction.South;
+import com.kata.mars.rover.direction.West;
+
 public abstract class Direction {
 
     protected Direction() {

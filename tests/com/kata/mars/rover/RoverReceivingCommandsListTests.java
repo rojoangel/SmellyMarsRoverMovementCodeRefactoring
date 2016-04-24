@@ -1,5 +1,8 @@
+package com.kata.mars.rover;
+
 import static org.junit.Assert.assertEquals;
 
+import com.kata.mars.rover.Rover;
 import org.junit.Test;
 
 public class RoverReceivingCommandsListTests {
