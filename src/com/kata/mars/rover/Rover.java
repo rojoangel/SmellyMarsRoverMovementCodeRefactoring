@@ -1,13 +1,5 @@
 package com.kata.mars.rover;
 
-import com.kata.mars.rover.command.MoveBackward;
-import com.kata.mars.rover.command.MoveForward;
-import com.kata.mars.rover.command.RotateLeft;
-import com.kata.mars.rover.command.RotateRight;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class Rover {
 
     private Vector vector;
@@ -25,38 +17,8 @@ public class Rover {
      * @param commandsSequence String
      */
     public void receive(String commandsSequence) {
-        List<Command> commands = extractCommandsFrom(commandsSequence);
-        apply(commands);
-    }
-
-    /**
-     * @param commands List<Command>
-     */
-    protected void apply(List<Command> commands) {
-        for (Command command : commands) {
-            this.vector = command.apply(this.vector);
-        }
-    }
-
-    /**
-     * @param commandsSequence String
-     * @return List<Command>
-     */
-    private List<Command> extractCommandsFrom(String commandsSequence) {
-        List<Command> commands = new ArrayList<>();
-        for (int i = 0; i < commandsSequence.length(); ++i) {
-            String command = commandsSequence.substring(i, i + 1);
-            if (command.equals("l")) {
-                commands.add(new RotateLeft());
-            } else if (command.equals("r")) {
-                commands.add(new RotateRight());
-            } else  if (command.equals("f")) {
-                commands.add(new MoveForward());
-            } else {
-                commands.add(new MoveBackward());
-            }
-        }
-        return commands;
+        Commands commands = Commands.extractCommandsFrom(commandsSequence);
+        this.vector = commands.apply(this.vector);
     }
 
     @Override
