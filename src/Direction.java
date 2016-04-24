@@ -75,6 +75,21 @@ public abstract class Direction {
      */
     public abstract Direction rotateRight();
 
+    /**
+     * @return Direction
+     */
+    public Direction rotateLeft() {
+        if (isNorth()) {
+            return Direction.from("W");
+        } else if (isSouth()) {
+            return Direction.from("E");
+        } else if (isWest()) {
+            return Direction.from("S");
+        } else {
+            return Direction.from("N");
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -85,4 +100,5 @@ public abstract class Direction {
         return directionAsString != null ? directionAsString.equals(direction.directionAsString) : direction.directionAsString == null;
 
     }
+
 }

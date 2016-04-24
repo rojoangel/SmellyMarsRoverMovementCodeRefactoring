@@ -22,7 +22,7 @@ public class Rover {
      */
     private void applyCommand(String command) {
         if (shouldRotateLeft(command)) {
-            rotateLeft();
+            this.direction = this.direction.rotateLeft();
         } else if (shouldRotateRight(command)) {
             this.direction = this.direction.rotateRight();
         } else {
@@ -70,19 +70,7 @@ public class Rover {
         }
         return displacement1;
     }
-
-    private void rotateLeft() {
-        if (isFacingNorth()) {
-            this.direction = Direction.from("W");
-        } else if (isFacingSouth()) {
-            this.direction = Direction.from("E");
-        } else if (isFacingWest()) {
-            this.direction = Direction.from("S");
-        } else {
-            this.direction = Direction.from("N");
-        }
-    }
-
+    
     private boolean isFacingWest() {
         return this.direction.isWest();
     }
