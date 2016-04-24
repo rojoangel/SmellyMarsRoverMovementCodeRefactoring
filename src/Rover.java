@@ -1,5 +1,7 @@
 public class Rover {
 
+    private static final int BACKWARD_DISPLACEMENT = -1;
+    private static final int FORWARD_DISPLACEMENT = 1;
     private int y;
     private int x;
     private Direction direction;
@@ -75,12 +77,10 @@ public class Rover {
     }
 
     private int calculateDisplacement(String command) {
-        int displacement1 = -1;
-
         if (command.equals("f")) {
-            displacement1 = 1;
+            return FORWARD_DISPLACEMENT;
         }
-        return displacement1;
+        return BACKWARD_DISPLACEMENT;
     }
     
     private boolean isFacingWest() {
