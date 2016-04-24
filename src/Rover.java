@@ -66,14 +66,22 @@ public class Rover {
     private void displace(String command) {
         int displacement = calculateDisplacement(command);
         if (isFacingNorth()) {
-            setCoordinates(x, y + displacement);
+            Coordinates coordinatesToAdd = new Coordinates(0, displacement);
+            addCoordinates(coordinatesToAdd);
         } else if (isFacingSouth()) {
-            setCoordinates(x, y - displacement);
+            Coordinates coordinatesToAdd = new Coordinates(0, -displacement);
+            addCoordinates(coordinatesToAdd);
         } else if (isFacingWest()) {
-            setCoordinates(x - displacement, y);
+            Coordinates coordinatesToAdd = new Coordinates(-displacement, 0);
+            addCoordinates(coordinatesToAdd);
         } else {
-            setCoordinates(x + displacement, y);
+            Coordinates coordinatesToAdd = new Coordinates(displacement, 0);
+            addCoordinates(coordinatesToAdd);
         }
+    }
+
+    private void addCoordinates(Coordinates coordinatesToAdd) {
+        this.coordinates.add(coordinatesToAdd);
     }
 
     private int calculateDisplacement(String command) {

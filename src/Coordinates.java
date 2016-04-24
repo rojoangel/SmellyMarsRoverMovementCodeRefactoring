@@ -7,6 +7,11 @@ public class Coordinates {
         this.y = y;
     }
 
+    public void add(Coordinates displacement) {
+        this.x += displacement.x;
+        this.y += displacement.y;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
