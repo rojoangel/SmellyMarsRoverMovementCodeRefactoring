@@ -1,7 +1,5 @@
 public class Rover {
 
-    private static final int BACKWARD_DISPLACEMENT = -1;
-    private static final int FORWARD_DISPLACEMENT = 1;
     private int y;
     private int x;
     private Direction direction;
@@ -64,33 +62,36 @@ public class Rover {
      * @param command String
      */
     private void applyDisplacement(String command) {
-        Coordinates coordinatesToAdd;
-        if (isFacingNorth()) {
-            int displacement =  BACKWARD_DISPLACEMENT;
-            if (command.equals("f")) {
-                displacement =  FORWARD_DISPLACEMENT;
-            }
-            coordinatesToAdd = new Coordinates(0, displacement);
-        } else if (isFacingSouth()) {
-            int displacement =  BACKWARD_DISPLACEMENT;
-            if (command.equals("f")) {
-                displacement =  FORWARD_DISPLACEMENT;
-            }
-            coordinatesToAdd = new Coordinates(0, -displacement);
-        } else if (isFacingWest()) {
-            int displacement =  BACKWARD_DISPLACEMENT;
-            if (command.equals("f")) {
-                displacement =  FORWARD_DISPLACEMENT;
-            }
-            coordinatesToAdd = new Coordinates(-displacement, 0);
-        } else {
-            int displacement =  BACKWARD_DISPLACEMENT;
-            if (command.equals("f")) {
-                displacement =  FORWARD_DISPLACEMENT;
-            }
-            coordinatesToAdd = new Coordinates(displacement, 0);
-        }
+        Coordinates coordinatesToAdd = displace(command);
         addCoordinates(coordinatesToAdd);
+    }
+
+    private Coordinates displace(String command) {
+        if (isFacingNorth()) {
+            if (command.equals("f")) {
+                return new Coordinates(0, 1);
+            } else {
+                return new Coordinates(0, -1);
+            }
+        } else if (isFacingSouth()) {
+            if (command.equals("f")) {
+                return new Coordinates(0, -1);
+            } else {
+                return new Coordinates(0, 1);
+            }
+        } else if (isFacingWest()) {
+            if (command.equals("f")) {
+                return new Coordinates(-1, 0);
+            } else {
+                return new Coordinates(1, 0);
+            }
+        } else {
+            if (command.equals("f")) {
+                return new Coordinates(1, 0);
+            } else {
+                return new Coordinates(-1, 0);
+            }
+        }
     }
 
     private void addCoordinates(Coordinates coordinatesToAdd) {
