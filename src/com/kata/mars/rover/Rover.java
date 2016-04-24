@@ -25,6 +25,24 @@ public class Rover {
      * @param commandsSequence String
      */
     public void receive(String commandsSequence) {
+        List<Command> commands = extractCommandsFrom(commandsSequence);
+        apply(commands);
+    }
+
+    /**
+     * @param commands List<Command>
+     */
+    protected void apply(List<Command> commands) {
+        for (Command command : commands) {
+            this.vector = command.apply(this.vector);
+        }
+    }
+
+    /**
+     * @param commandsSequence String
+     * @return List<Command>
+     */
+    private List<Command> extractCommandsFrom(String commandsSequence) {
         List<Command> commands = new ArrayList<>();
         for (int i = 0; i < commandsSequence.length(); ++i) {
             String command = commandsSequence.substring(i, i + 1);
@@ -38,9 +56,7 @@ public class Rover {
                 commands.add(new MoveBackward());
             }
         }
-        for (Command command : commands) {
-            this.vector = command.apply(this.vector);
-        }
+        return commands;
     }
 
     @Override
