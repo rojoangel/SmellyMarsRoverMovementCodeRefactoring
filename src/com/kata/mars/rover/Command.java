@@ -2,8 +2,8 @@ package com.kata.mars.rover;
 
 public interface Command {
     /**
-     * @param vector Vector
-     * @return Vector
+     *
+     * @param rover Rover
      */
-    Vector apply(Vector vector);
+    void apply(Rover rover);
 }

@@ -18,7 +18,23 @@ public class Rover {
      */
     public void receive(String commandsSequence) {
         Commands commands = Commands.extractCommandsFrom(commandsSequence);
-        this.vector = commands.apply(this.vector);
+        commands.apply(this);
+    }
+
+    public void moveBackward() {
+        this.vector = vector.moveBackward();
+    }
+
+    public void moveForward() {
+        this.vector = this.vector.moveForward();
+    }
+
+    public void rotateLeft() {
+        this.vector = this.vector.rotateLeft();
+    }
+
+    public void rotateRight() {
+        this.vector = this.vector.rotateRight();
     }
 
     @Override

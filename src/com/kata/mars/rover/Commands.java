@@ -30,13 +30,11 @@ public class Commands {
     }
 
     /**
-     * @param vector Vector
-     * @return Vector
+     * @param rover Rover
      */
-    public Vector apply(Vector vector) {
+    public void apply(Rover rover) {
         for (Command command : commands) {
-            vector = command.apply(vector);
+            command.apply(rover);
         }
-        return vector;
     }
 }
