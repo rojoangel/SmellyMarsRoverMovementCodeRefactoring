@@ -72,12 +72,7 @@ public abstract class Direction {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Direction direction = (Direction) o;
-
-        return directionAsString != null ? directionAsString.equals(direction.directionAsString) : direction.directionAsString == null;
-
+        if (o == null) return false;
+        return getClass() == o.getClass();
     }
-
 }
