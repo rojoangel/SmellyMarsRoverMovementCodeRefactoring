@@ -78,24 +78,10 @@ public class Rover {
      */
     private Vector displace(String command) {
         if (command.equals("f")) {
-            return moveForward();
+            return this.vector.moveForward();
         } else {
-            return moveBackward();
+            return this.vector.moveBackward();
         }
-    }
-
-    /**
-     * @return Vector
-     */
-    private Vector moveBackward() {
-        return new Vector(direction.moveBackward(this.coordinates), this.direction);
-    }
-
-    /**
-     * @return Vector
-     */
-    private Vector moveForward() {
-        return new Vector(this.direction.moveForward(this.coordinates), this.direction);
     }
 
     @Override

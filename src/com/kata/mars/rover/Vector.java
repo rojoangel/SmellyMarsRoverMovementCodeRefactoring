@@ -27,6 +27,20 @@ public class Vector {
         return new Vector(this.coordinates, this.direction.rotateLeft());
     }
 
+    /**
+     * @return Vector
+     */
+    public Vector moveBackward() {
+        return new Vector(this.direction.moveBackward(this.coordinates), this.direction);
+    }
+
+    /**
+     * @return Vector
+     */
+    public Vector moveForward() {
+        return new Vector(this.direction.moveForward(this.coordinates), this.direction);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
