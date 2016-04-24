@@ -8,7 +8,7 @@ public abstract class Direction {
      */
     public static Direction from(String directionAsString) {
         if (isNorth(directionAsString)) {
-            return new North(directionAsString);
+            return new North();
         }
 
         if (isSouth(directionAsString)) {
