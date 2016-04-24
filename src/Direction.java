@@ -78,9 +78,7 @@ public abstract class Direction {
     /**
      * @return Direction
      */
-    public Direction rotateLeft() {
-        throw new RuntimeException("Unexpected call to Direction's rotateLeft method");
-    }
+    public abstract Direction rotateLeft();
 
     @Override
     public boolean equals(Object o) {
