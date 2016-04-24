@@ -1,14 +1,22 @@
 package com.kata.mars.rover;
 
 public class Coordinates {
+
     private int x;
     private int y;
 
+    /**
+     * @param x int
+     * @param y int
+     */
     public Coordinates(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
+    /**
+     * @param displacement Coordinates
+     */
     public void add(Coordinates displacement) {
         this.x += displacement.x;
         this.y += displacement.y;
