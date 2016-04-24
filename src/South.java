@@ -24,4 +24,9 @@ public class South extends Direction {
     public Coordinates moveBackward() {
         return new Coordinates(0, 1);
     }
+
+    @Override
+    public Coordinates moveForward() {
+        return new Coordinates(0, -1);
+    }
 }
