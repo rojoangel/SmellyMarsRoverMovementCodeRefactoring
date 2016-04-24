@@ -1,4 +1,4 @@
-public class Direction {
+public abstract class Direction {
 
     private final String directionAsString;
 
@@ -73,9 +73,7 @@ public class Direction {
     /**
      * @return Direction
      */
-    public Direction rotateRight() {
-        throw new RuntimeException("Unexpected method invocation");
-    }
+    public abstract Direction rotateRight();
 
     @Override
     public boolean equals(Object o) {
