@@ -2,6 +2,7 @@ package com.kata.mars.rover;
 
 public class Rover {
 
+    private Vector vector;
     private Direction direction;
     private Coordinates coordinates;
 
@@ -13,6 +14,7 @@ public class Rover {
     public Rover(int x, int y, String directionAsString) {
         this.coordinates = new Coordinates(x, y);
         this.direction = Direction.from(directionAsString);
+        this.vector = new Vector(new Coordinates(x, y), Direction.from(directionAsString));
     }
 
     /**
