@@ -7,6 +7,10 @@ import com.kata.mars.rover.direction.West;
 
 public abstract class Direction {
 
+    private static final String NORTH = "N";
+    private static final String SOUTH = "S";
+    private static final String WEST = "W";
+
     protected Direction() {
     }
 
@@ -31,7 +35,7 @@ public abstract class Direction {
     }
 
     private static boolean isWest(String directionAsString) {
-        return directionAsString.equals("W");
+        return directionAsString.equals(WEST);
     }
 
     /**
@@ -39,7 +43,7 @@ public abstract class Direction {
      * @return boolean
      */
     private static boolean isSouth(String directionAsString) {
-        return directionAsString.equals("S");
+        return directionAsString.equals(SOUTH);
     }
 
     /**
@@ -47,7 +51,7 @@ public abstract class Direction {
      * @return boolean
      */
     private static boolean isNorth(String directionAsString) {
-        return directionAsString.equals("N");
+        return directionAsString.equals(NORTH);
     }
 
     /**
