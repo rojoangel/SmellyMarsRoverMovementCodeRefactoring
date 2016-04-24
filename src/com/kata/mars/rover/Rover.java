@@ -88,9 +88,17 @@ public class Rover {
      * @param coordinatesToAdd Coordinates
      */
     private void addCoordinates(Coordinates coordinatesToAdd) {
-        this.coordinates = this.coordinates.add(coordinatesToAdd);
+        setCoordinates(this.coordinates.add(coordinatesToAdd));
     }
-    
+
+    /**
+     * @param coordinates Coordinates
+     */
+    private void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
+        this.vector = new Vector(coordinates, this.direction);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
