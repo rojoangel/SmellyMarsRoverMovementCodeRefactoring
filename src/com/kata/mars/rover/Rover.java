@@ -106,8 +106,7 @@ public class Rover {
 
         Rover rover = (Rover) o;
 
-        if (direction != null ? !direction.equals(rover.direction) : rover.direction != null) return false;
-        return coordinates != null ? coordinates.equals(rover.coordinates) : rover.coordinates == null;
+        return vector != null ? vector.equals(rover.vector) : rover.vector == null;
 
     }
 }
