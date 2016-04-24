@@ -19,4 +19,9 @@ public class South extends Direction {
     public Direction rotateLeft() {
         return Direction.from("E");
     }
+
+    @Override
+    public Coordinates moveBackward() {
+        return new Coordinates(0, 1);
+    }
 }
