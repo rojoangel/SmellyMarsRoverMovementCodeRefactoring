@@ -32,7 +32,7 @@ public class CommandFactory {
      */
     public static Command createCommand(String representation) {
         if (!registeredCommands.containsKey(representation)) {
-            return new NullCommand();
+            return new UnknownCommand();
         }
         return registeredCommands.get(representation);
     }
