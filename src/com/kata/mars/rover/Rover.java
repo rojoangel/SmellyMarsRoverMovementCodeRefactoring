@@ -24,48 +24,15 @@ public class Rover {
     public void receive(String commandsSequence) {
         for (int i = 0; i < commandsSequence.length(); ++i) {
             String command = commandsSequence.substring(i, i + 1);
-            applyCommand(command);
-        }
-    }
-
-    /**
-     * @param command String
-     */
-    private void applyCommand(String command) {
-        if (shouldRotateLeft(command)) {
-            this.vector = new RotateLeft().apply(this.vector);
-        } else if (shouldRotateRight(command)) {
-            this.vector = new RotateRight().apply(this.vector);
-        } else {
-            this.vector = displace(command);
-        }
-    }
-
-    /**
-     * @param command String
-     * @return boolean
-     */
-    private boolean shouldRotateRight(String command) {
-        return command.equals("r");
-    }
-
-    /**
-     * @param command String
-     * @return boolean
-     */
-    private boolean shouldRotateLeft(String command) {
-        return command.equals("l");
-    }
-
-    /**
-     * @param command String
-     * @return Vector
-     */
-    private Vector displace(String command) {
-        if (command.equals("f")) {
-            return new MoveForward().apply(this.vector);
-        } else {
-            return new MoveBackward().apply(this.vector);
+            if (command.equals("l")) {
+                this.vector = new RotateLeft().apply(this.vector);
+            } else if (command.equals("r")) {
+                this.vector = new RotateRight().apply(this.vector);
+            } else  if (command.equals("f")) {
+                this.vector = new MoveForward().apply(this.vector);
+            } else {
+                this.vector = new MoveBackward().apply(this.vector);
+            }
         }
     }
 
