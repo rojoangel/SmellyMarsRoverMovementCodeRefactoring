@@ -64,17 +64,20 @@ public class Rover {
      * @param command String
      */
     private void displace(String command) {
-        int displacement = calculateDisplacement(command);
         if (isFacingNorth()) {
+            int displacement = calculateDisplacement(command);
             Coordinates coordinatesToAdd = new Coordinates(0, displacement);
             addCoordinates(coordinatesToAdd);
         } else if (isFacingSouth()) {
+            int displacement = calculateDisplacement(command);
             Coordinates coordinatesToAdd = new Coordinates(0, -displacement);
             addCoordinates(coordinatesToAdd);
         } else if (isFacingWest()) {
+            int displacement = calculateDisplacement(command);
             Coordinates coordinatesToAdd = new Coordinates(-displacement, 0);
             addCoordinates(coordinatesToAdd);
         } else {
+            int displacement = calculateDisplacement(command);
             Coordinates coordinatesToAdd = new Coordinates(displacement, 0);
             addCoordinates(coordinatesToAdd);
         }
