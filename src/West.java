@@ -1,12 +1,5 @@
 public class West extends Direction {
 
-    protected West() {
-        super();
-    }
-
-    /**
-     * @return Direction
-     */
     @Override
     public Direction rotateRight() {
         return Direction.from("N");
