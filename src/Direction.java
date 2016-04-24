@@ -85,6 +85,22 @@ public abstract class Direction {
      */
     public abstract Coordinates moveBackward();
 
+    /**
+     * @return Direction
+     */
+    public Coordinates moveForward() {
+        if (isNorth()) {
+            return new Coordinates(0, 1);
+        } else if (isSouth()) {
+            return new Coordinates(0, -1);
+        } else if (isWest()) {
+            return new Coordinates(-1, 0);
+        } else {
+            return new Coordinates(1, 0);
+        }
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

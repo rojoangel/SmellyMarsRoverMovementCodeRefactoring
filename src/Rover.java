@@ -68,24 +68,9 @@ public class Rover {
 
     private Coordinates displace(String command) {
         if (command.equals("f")) {
-            return moveForward();
+            return direction.moveForward();
         } else {
             return direction.moveBackward();
-        }
-    }
-
-    /**
-     * @return Direction
-     */
-    private Coordinates moveForward() {
-        if (isFacingNorth()) {
-            return new Coordinates(0, 1);
-        } else if (isFacingSouth()) {
-            return new Coordinates(0, -1);
-        } else if (isFacingWest()) {
-            return new Coordinates(-1, 0);
-        } else {
-            return new Coordinates(1, 0);
         }
     }
 
