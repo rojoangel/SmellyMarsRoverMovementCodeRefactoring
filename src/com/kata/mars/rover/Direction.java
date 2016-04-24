@@ -62,13 +62,15 @@ public abstract class Direction {
 
     /**
      * @return Direction
+     * @param coordinates Coordinates
      */
-    public abstract Coordinates moveBackward();
+    public abstract Coordinates moveBackward(Coordinates coordinates);
 
     /**
      * @return Direction
+     * @param coordinates Coordinates
      */
-    public abstract Coordinates moveForward();
+    public abstract Coordinates moveForward(Coordinates coordinates);
 
     @Override
     public boolean equals(Object o) {

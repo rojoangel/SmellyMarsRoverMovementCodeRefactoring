@@ -16,12 +16,12 @@ public class South extends Direction {
     }
 
     @Override
-    public Coordinates moveBackward() {
-        return new Coordinates(0, 1);
+    public Coordinates moveBackward(Coordinates coordinates) {
+        return coordinates.add(new Coordinates(0, 1));
     }
 
     @Override
-    public Coordinates moveForward() {
-        return new Coordinates(0, -1);
+    public Coordinates moveForward(Coordinates coordinates) {
+        return coordinates.add(new Coordinates(0, -1));
     }
 }

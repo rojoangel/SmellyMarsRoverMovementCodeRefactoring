@@ -69,8 +69,7 @@ public class Rover {
      * @param command String
      */
     private void applyDisplacement(String command) {
-        Coordinates coordinatesToAdd = displace(command);
-        addCoordinates(coordinatesToAdd);
+        setVector(new Vector(displace(command), direction));
     }
 
     /**
@@ -79,17 +78,10 @@ public class Rover {
      */
     private Coordinates displace(String command) {
         if (command.equals("f")) {
-            return direction.moveForward();
+            return direction.moveForward(this.coordinates);
         } else {
-            return direction.moveBackward();
+            return direction.moveBackward(this.coordinates);
         }
-    }
-
-    /**
-     * @param coordinatesToAdd Coordinates
-     */
-    private void addCoordinates(Coordinates coordinatesToAdd) {
-        setVector(new Vector(this.coordinates.add(coordinatesToAdd), direction));
     }
 
     @Override

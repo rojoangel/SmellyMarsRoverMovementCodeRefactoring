@@ -16,12 +16,12 @@ public class West extends Direction {
     }
 
     @Override
-    public Coordinates moveBackward() {
-        return new Coordinates(1, 0);
+    public Coordinates moveBackward(Coordinates coordinates) {
+        return coordinates.add(new Coordinates(1, 0));
     }
 
     @Override
-    public Coordinates moveForward() {
-        return new Coordinates(-1, 0);
+    public Coordinates moveForward(Coordinates coordinates) {
+        return coordinates.add(new Coordinates(-1, 0));
     }
 }
