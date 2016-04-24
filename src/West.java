@@ -1,14 +1,7 @@
 public class West extends Direction {
 
-    /**
-     * @param directionAsString String
-     */
-    public West(String directionAsString) {
-        super(directionAsString);
-    }
-
     protected West() {
-        super("W");
+        super();
     }
 
     /**

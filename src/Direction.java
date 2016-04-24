@@ -1,6 +1,7 @@
 public abstract class Direction {
 
-    private final String directionAsString;
+    protected Direction() {
+    }
 
     /**
      * @param directionAsString String
@@ -42,13 +43,6 @@ public abstract class Direction {
         return directionAsString.equals("N");
     }
 
-    /**
-     * @param directionAsString String
-     */
-    protected Direction(String directionAsString) {
-        this.directionAsString = directionAsString;
-    }
-    
     /**
      * @return Direction
      */

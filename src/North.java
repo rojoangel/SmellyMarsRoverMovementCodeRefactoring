@@ -1,7 +1,7 @@
 public class North extends Direction {
 
     protected North() {
-        super("N");
+        super();
     }
 
     /**

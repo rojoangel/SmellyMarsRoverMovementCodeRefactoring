@@ -1,7 +1,7 @@
 public class East extends Direction {
 
     protected East() {
-        super("E");
+        super();
     }
 
     /**
