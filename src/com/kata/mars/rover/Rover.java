@@ -32,22 +32,21 @@ public class Rover {
      */
     private void applyCommand(String command) {
         if (shouldRotateLeft(command)) {
-            setVector(this.coordinates, this.direction.rotateLeft());
+            setVector(new Vector(this.coordinates, this.direction.rotateLeft()));
         } else if (shouldRotateRight(command)) {
-            setVector(this.coordinates, this.direction.rotateRight());
+            setVector(new Vector(this.coordinates, this.direction.rotateRight()));
         } else {
             applyDisplacement(command);
         }
     }
 
     /**
-     * @param coordinates Coordinates
-     * @param direction Direction
+     * @param vector Vector
      */
-    private void setVector(Coordinates coordinates, Direction direction) {
-        this.vector = new Vector(coordinates, direction);
-        this.coordinates = coordinates;
-        this.direction = direction;
+    private void setVector(Vector vector) {
+        this.vector = vector;
+        this.coordinates = vector.coordinates;
+        this.direction = vector.direction;
     }
 
     /**
@@ -90,7 +89,7 @@ public class Rover {
      * @param coordinatesToAdd Coordinates
      */
     private void addCoordinates(Coordinates coordinatesToAdd) {
-        setVector(this.coordinates.add(coordinatesToAdd), direction);
+        setVector(new Vector(this.coordinates.add(coordinatesToAdd), direction));
     }
 
     @Override

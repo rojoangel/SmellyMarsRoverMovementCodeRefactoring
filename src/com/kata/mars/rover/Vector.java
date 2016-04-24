@@ -1,8 +1,8 @@
 package com.kata.mars.rover;
 
 public class Vector {
-    private final Coordinates coordinates;
-    private final Direction direction;
+    public final Coordinates coordinates;
+    public final Direction direction;
 
     /**
      * @param coordinates Coordinates
