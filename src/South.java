@@ -1,10 +1,7 @@
 public class South extends Direction {
-
-    /**
-     * @param directionAsString String
-     */
-    public South(String directionAsString) {
-        super(directionAsString);
+    
+    protected South() {
+        super("S");
     }
 
     /**
