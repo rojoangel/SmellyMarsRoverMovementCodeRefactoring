@@ -17,8 +17,7 @@ public class Rover {
      * @param commandsSequence String
      */
     public void receive(String commandsSequence) {
-        Commands commands = Commands.extractCommandsFrom(commandsSequence);
-        commands.apply(this);
+        Commands.extractCommandsFrom(commandsSequence).apply(this);
     }
 
     public void moveBackward() {
