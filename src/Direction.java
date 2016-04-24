@@ -88,10 +88,7 @@ public abstract class Direction {
     /**
      * @return Direction
      */
-    public Coordinates moveForward() {
-        throw new RuntimeException("Unexpected call to Direction moveForward method");
-    }
-
+    public abstract Coordinates moveForward();
 
     @Override
     public boolean equals(Object o) {
