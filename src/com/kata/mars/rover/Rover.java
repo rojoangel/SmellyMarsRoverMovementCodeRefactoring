@@ -32,12 +32,26 @@ public class Rover {
      */
     private void applyCommand(String command) {
         if (shouldRotateLeft(command)) {
-            setVector(new Vector(this.coordinates, this.direction.rotateLeft()));
+            setVector(rotateLeft());
         } else if (shouldRotateRight(command)) {
-            setVector(new Vector(this.coordinates, this.direction.rotateRight()));
+            setVector(rotateRight());
         } else {
             applyDisplacement(command);
         }
+    }
+
+    /**
+     * @return Vector
+     */
+    private Vector rotateRight() {
+        return new Vector(this.coordinates, this.direction.rotateRight());
+    }
+
+    /**
+     * @return Vector
+     */
+    private Vector rotateLeft() {
+        return new Vector(this.coordinates, this.direction.rotateLeft());
     }
 
     /**
