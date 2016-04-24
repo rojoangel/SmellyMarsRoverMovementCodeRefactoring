@@ -48,28 +48,7 @@ public abstract class Direction {
     protected Direction(String directionAsString) {
         this.directionAsString = directionAsString;
     }
-
-    /**
-     * @return boolean
-     */
-    public boolean isNorth() {
-        return isNorth(directionAsString);
-    }
-
-    /**
-     * @return boolean
-     */
-    public boolean isSouth() {
-        return isSouth(directionAsString);
-    }
-
-    /**
-     * @return boolean
-     */
-    public boolean isWest() {
-        return isWest(directionAsString);
-    }
-
+    
     /**
      * @return Direction
      */
